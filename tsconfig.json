@@ -1,0 +1,30 @@
+{
+  "include": ["src"],
+  "compilerOptions": {
+    "strictPropertyInitialization": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "inlineSources": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "outDir": "./build",
+    "target": "es5",
+    "module": "commonjs",
+    "lib": [
+      "es2015", "dom"
+    ],
+    "esModuleInterop": true,
+    "allowJs": true,
+    "strict": true,
+    "sourceMap": true,
+    "baseUrl": "src",
+    "rootDir": "src",
+    "paths": {
+      "@/*": ["*"]
+    }
+  }
+}

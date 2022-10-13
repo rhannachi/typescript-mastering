@@ -1,5 +1,7 @@
 {
-  "include": ["src"],
+  "include": [
+    "packages"
+  ],
   "compilerOptions": {
     "strictPropertyInitialization": false,
     "noUnusedLocals": true,
@@ -21,8 +23,8 @@
     "allowJs": true,
     "strict": true,
     "sourceMap": true,
-    "baseUrl": "src",
-    "rootDir": "src",
+    "baseUrl": "packages",
+    "rootDir": "packages",
     "paths": {
       "@/*": ["*"]
     }

@@ -110,3 +110,5 @@ globalConfig.json
 .idea/
 
 build/
+
+.env

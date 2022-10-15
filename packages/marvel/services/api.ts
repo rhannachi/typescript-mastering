@@ -1,51 +1,40 @@
 import MD5 from "crypto-js/md5";
-
 import fetch, {Headers, Request} from 'node-fetch';
-import {IApiError} from "@/marvel/schemas";
-
-const HEADERS = {
-    'Content-Type': 'application/json',
-    'Cache-Control': 'no-cache',
-    'Connection': 'keep-alive'
-} as const
+import {BASE_URL, HEADERS, MARVEL_PRIVATE_KEY, MARVEL_PUBLIC_KEY} from "@/marvel/helpers";
 
 type MethodType = 'GET'
 
-type OK<T> = { status: 'OK'; response: T }
-type KO = { status: 'KO'; error: IApiError }
-
-const okTransform = <T>(response: T): OK<T> => {
-    return Object.freeze({ status: 'OK', response })
-}
-
-const koTransform = (error: IApiError | Error): KO => {
-    if (error instanceof  Error) {
-        return { status: 'KO', error: { code: '500', message: error.message} }
-    }
-    return { status: 'KO', error }
-}
-
-class Api {
+export class Api {
     private readonly _headers: Headers
     private _url: string
     private _method: MethodType
 
-
     constructor() {
         this._headers = new Headers(HEADERS)
         this._method = 'GET'
+        this._url = BASE_URL
     }
 
     private credentials() : string {
-        const publicKey = process.env?.MARVEL_PUBLIC_KEY
-        const privateKey = process.env?.MARVEL_PRIVATE_KEY
         const timestamp = (new Date()).getTime()
-        const hash = MD5(`${timestamp}${privateKey}${publicKey}`).toString()
-        return `?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+        const hash = MD5(`${timestamp}${MARVEL_PRIVATE_KEY}${MARVEL_PUBLIC_KEY}`).toString()
+        return `?ts=${timestamp}&apikey=${MARVEL_PUBLIC_KEY}&hash=${hash}`
     }
 
+    private okTransform <T>(response: T): OK<T> {
+        return Object.freeze({ status: 'OK', response })
+    }
+
+    private koTransform (error: IError | Error): KO {
+        if (error instanceof  Error) {
+            return { status: 'KO', error: { code: '500', message: error.message} }
+        }
+        return { status: 'KO', error }
+    }
+
+
     public request(url: string): this {
-        this._url = `${url}${this.credentials()}`
+        this._url = `${this._url}${url}${this.credentials()}`
         return this
     }
 
@@ -63,16 +52,14 @@ class Api {
         return new Promise((resolve) => {
             fetch(request)
                 .then((response) => Promise.all([response.status, response.json()]))
-                .then(([status, response]: [number, T | IApiError]) => {
+                .then(([status, response]: [number, T | IError]) => {
                     if (status === 200) {
-                        resolve(okTransform<T>(response as T) )
+                        resolve(this.okTransform<T>(response as T) )
                     }
-                    resolve(koTransform(response as IApiError ))
+                    resolve(this.koTransform(response as IError ))
                 })
-                .catch((error: Error) => resolve(koTransform(error)))
+                .catch((error: Error) => resolve(this.koTransform(error)))
         })
 
     }
 }
-
-export default Api

@@ -1,24 +1,21 @@
 {
   "include": [
-    "packages"
+    "packages/**/*"
+  ],
+  "ts-node": {
+    "files": true
+  },
+  "files": [
+    "packages/marvel/schemas/comic.d.ts",
+    "packages/marvel/schemas/creator.d.ts",
+    "packages/marvel/schemas/api.d.ts",
+    "packages/marvel/schemas/error.d.ts",
+    "packages/marvel/schemas/generic.d.ts"
   ],
   "compilerOptions": {
-    "strictPropertyInitialization": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "inlineSources": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "skipLibCheck": true,
     "outDir": "./build",
-    "target": "es5",
     "module": "commonjs",
-    "lib": [
-      "es2015", "dom"
-    ],
+    "target": "ES2019",
     "esModuleInterop": true,
     "allowJs": true,
     "strict": true,
@@ -29,4 +26,5 @@
       "@/*": ["*"]
     }
   }
+
 }

@@ -6,7 +6,6 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register packages/marvel/server.ts",
-    "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s packages -o ./build",
     "ts:check": "tsc --noemit",
     "lint": "yarn eslint ."
   },
@@ -29,7 +28,6 @@
     "eslint-config-prettier": "^8.5.0",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.1.0",
-    "tscpaths": "^0.0.9",
     "typescript": "^4.8.4"
   }
 }

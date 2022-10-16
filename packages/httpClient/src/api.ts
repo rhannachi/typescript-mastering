@@ -7,7 +7,7 @@ import {IError, KO, OK} from "./schemas";
 
 type MethodType = 'GET'
 
-class Api {
+class Http {
     private readonly _headers: Headers
     private _url: string
     private _method: MethodType
@@ -67,4 +67,4 @@ class Api {
     }
 }
 
-export default Api
+export default Http

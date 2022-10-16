@@ -1,4 +1,4 @@
-# typescript mastering
+# monorepos: typescript mastering
 
 # Start project
 TODO

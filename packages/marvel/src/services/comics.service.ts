@@ -1,4 +1,5 @@
-import {Api} from "@/marvel/services";
+import Api, {KO, OK} from 'core/src';
+import {IComicDataWrapper, ICreatorDataWrapper} from "../schemas";
 
 const GET_COMICS = `/v1/public/comics` as const
 

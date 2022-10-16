@@ -4,13 +4,18 @@
   "repository": "git@github.com:ramzi-hannachi-1991/typescript-mastering.git",
   "author": "Ramzi <ramzi.hannachi1991@gmail.com>",
   "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/core",
+    "packages/marvel"
+  ],
   "scripts": {
-    "dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register packages/marvel/server.ts",
-    "ts:check": "tsc --noemit",
+    "compile": "tsc --build --force tsconfig.json",
+    "clean": "rm -rf packages/core/build packages/marvel/build",
+    "dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register packages/marvel/src/server.ts",
     "lint": "yarn eslint ."
   },
   "dependencies": {
-    "crypto-js": "^4.1.1",
     "node-fetch": "2.6.1"
   },
   "engines": {
@@ -18,9 +23,7 @@
     "node": ">=16.15.0"
   },
   "devDependencies": {
-    "@types/crypto-js": "^4.1.1",
     "@types/node": "^18.8.3",
-    "@types/node-fetch": "^2.6.2",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",
     "dotenv": "^16.0.3",

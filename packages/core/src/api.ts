@@ -1,10 +1,13 @@
-import MD5 from "crypto-js/md5";
+import {MD5} from "crypto-js";
 import fetch, {Headers, Request} from 'node-fetch';
-import {BASE_URL, HEADERS, MARVEL_PRIVATE_KEY, MARVEL_PUBLIC_KEY} from "@/marvel/helpers";
+import {BASE_URL, HEADERS, MARVEL_PRIVATE_KEY, MARVEL_PUBLIC_KEY} from "./helpers";
+import {IError, KO, OK} from "./schemas";
+// TODO remove import *.d.ts
+
 
 type MethodType = 'GET'
 
-export class Api {
+class Api {
     private readonly _headers: Headers
     private _url: string
     private _method: MethodType
@@ -63,3 +66,5 @@ export class Api {
 
     }
 }
+
+export default Api

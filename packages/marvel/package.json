@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "marvel",
+  "version": "1.0.0",
+  "author": "Ramzi <ramzi.hannachi1991@gmail.com>",
+  "license": "MIT",
+  "main": "build/index",
+  "types": "build/index",
+  "dependencies": {
+    "core": "1.0.0"
+  },
+  "devDependencies": {}
+}

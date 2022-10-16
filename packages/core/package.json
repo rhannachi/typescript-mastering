@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "core",
+  "version": "1.0.0",
+  "author": "Ramzi <ramzi.hannachi1991@gmail.com>",
+  "license": "MIT",
+  "main": "build/index",
+  "types": "build/index",
+  "dependencies": {
+    "node-fetch": "2.6.1",
+    "crypto-js": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.6.2",
+    "@types/crypto-js": "^4.1.1"
+  }
+}

@@ -1,11 +1,11 @@
 
-interface IDataWrapper<T> {
+export interface IDataWrapper<T> {
     code: number,
     status :string,
     data: IDataContainer<T>,
 }
 
-interface IDataContainer<T> {
+export interface IDataContainer<T> {
     offset: number,
     limit: number,
     total: number,

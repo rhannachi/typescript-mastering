@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import {fetchComics, fetchCreatorsByComicId} from "@/marvel/services";
+import {fetchComics, fetchCreatorsByComicId} from "./services";
 
 const main = async () => {
 

@@ -1,30 +1,15 @@
 {
-  "include": [
-    "packages/**/*"
-  ],
-  "ts-node": {
-    "files": true
-  },
-  "files": [
-    "packages/marvel/schemas/comic.d.ts",
-    "packages/marvel/schemas/creator.d.ts",
-    "packages/marvel/schemas/api.d.ts",
-    "packages/marvel/schemas/error.d.ts",
-    "packages/marvel/schemas/generic.d.ts"
-  ],
-  "compilerOptions": {
-    "outDir": "./build",
-    "module": "commonjs",
-    "target": "ES2019",
-    "esModuleInterop": true,
-    "allowJs": true,
-    "strict": true,
-    "sourceMap": true,
-    "baseUrl": "packages",
-    "rootDir": "packages",
-    "paths": {
-      "@/*": ["*"]
+  "references": [
+    {
+      "path": "./packages/core"
+    },
+    {
+      "path": "./packages/marvel"
     }
-  }
-
+  ],
+  "files": [],
+  "include": [],
+  "exclude": [
+    "**/node_modules"
+  ]
 }

@@ -1,6 +1,6 @@
-import {IComicDataWrapper, ICreatorDataWrapper} from "../schemas";
+import {IComicDataWrapper, ICreatorDataWrapper} from "@/schemas";
 import Http, {KO, OK} from "http-client";
-import {credentials} from "../helpers";
+import {credentials} from "@/helpers";
 
 export const BASE_URL = process.env?.BASE_URL ?? '' as const
 

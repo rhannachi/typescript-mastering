@@ -1,5 +1,5 @@
 import fetch, {Headers, Request} from 'node-fetch';
-import {IError, KO, OK} from "./schemas";
+import {IError, KO, OK} from "@/schemas";
 // TODO remove import *.d.ts
 
 export const HEADERS = {

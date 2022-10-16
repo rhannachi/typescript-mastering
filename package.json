@@ -10,9 +10,9 @@
     "packages/marvel"
   ],
   "scripts": {
-    "compile": "tsc --build --force tsconfig.json",
+    "build": "tsc --build --force tsconfig.json",
     "clean": "rm -rf packages/httpClient/build packages/marvel/build",
-    "dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register packages/marvel/src/server.ts",
+    "marvel:dev": "yarn workspace marvel dev",
     "lint": "yarn eslint ./packages"
   },
   "dependencies": {

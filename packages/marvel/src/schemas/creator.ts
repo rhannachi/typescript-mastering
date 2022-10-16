@@ -1,6 +1,6 @@
 import {IDataWrapper} from "./generic";
 
-export interface ICreatorDataWrapper extends IDataWrapper<ICreator> {}
+export type ICreatorDataWrapper = IDataWrapper<ICreator>
 
 // interface ICreatorDataContainer extends IDataContainer<ICreator> {}
 

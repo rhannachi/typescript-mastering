@@ -13,7 +13,7 @@
     "compile": "tsc --build --force tsconfig.json",
     "clean": "rm -rf packages/httpClient/build packages/marvel/build",
     "dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register packages/marvel/src/server.ts",
-    "lint": "yarn eslint ."
+    "lint": "yarn eslint ./packages"
   },
   "dependencies": {
     "node-fetch": "2.6.1"

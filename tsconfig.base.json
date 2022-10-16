@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "strict": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "moduleResolution": "node",
@@ -8,6 +9,6 @@
     "sourceMap": true,
     "importHelpers": true,
     "composite": true,
-    "target": "es5",
+    "target": "es5"
   }
 }

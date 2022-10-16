@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.packages.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "src",
+    "outDir": "build",
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    }
+  }
+}

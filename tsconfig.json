@@ -1,32 +1,16 @@
 {
-  "include": [
-    "packages"
-  ],
-  "compilerOptions": {
-    "strictPropertyInitialization": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "inlineSources": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "skipLibCheck": true,
-    "outDir": "./build",
-    "target": "es5",
-    "module": "commonjs",
-    "lib": [
-      "es2015", "dom"
-    ],
-    "esModuleInterop": true,
-    "allowJs": true,
-    "strict": true,
-    "sourceMap": true,
-    "baseUrl": "packages",
-    "rootDir": "packages",
-    "paths": {
-      "@/*": ["*"]
+  "references": [
+    {
+      "path": "./packages/httpClient"
+    },
+    {
+      "path": "./packages/marvel"
     }
-  }
+  ],
+  "files": [],
+  "include": [],
+  "exclude": [
+    "**/node_modules",
+    "packages/**/build/**"
+  ]
 }

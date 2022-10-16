@@ -1,27 +1,24 @@
-import {MD5} from "crypto-js";
 import fetch, {Headers, Request} from 'node-fetch';
-import {BASE_URL, HEADERS, MARVEL_PRIVATE_KEY, MARVEL_PUBLIC_KEY} from "./helpers";
 import {IError, KO, OK} from "./schemas";
 // TODO remove import *.d.ts
 
+export const HEADERS = {
+    'Content-Type': 'application/json',
+    'Cache-Control': 'no-cache',
+    'Connection': 'keep-alive'
+} as const
 
 type MethodType = 'GET'
 
-class Http {
+class HttpClient {
     private readonly _headers: Headers
     private _url: string
     private _method: MethodType
 
-    constructor() {
+    constructor(baseUrl: string) {
         this._headers = new Headers(HEADERS)
         this._method = 'GET'
-        this._url = BASE_URL
-    }
-
-    private credentials() : string {
-        const timestamp = (new Date()).getTime()
-        const hash = MD5(`${timestamp}${MARVEL_PRIVATE_KEY}${MARVEL_PUBLIC_KEY}`).toString()
-        return `?ts=${timestamp}&apikey=${MARVEL_PUBLIC_KEY}&hash=${hash}`
+        this._url = baseUrl
     }
 
     private okTransform <T>(response: T): OK<T> {
@@ -35,9 +32,8 @@ class Http {
         return { status: 'KO', error }
     }
 
-
     public request(url: string): this {
-        this._url = `${this._url}${url}${this.credentials()}`
+        this._url = `${this._url}${url}`
         return this
     }
 
@@ -67,4 +63,4 @@ class Http {
     }
 }
 
-export default Http
+export default HttpClient

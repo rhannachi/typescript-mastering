@@ -6,8 +6,7 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "packages/httpClient",
-    "packages/marvel"
+    "packages/*"
   ],
   "scripts": {
     "build": "tsc --build --force tsconfig.json",
@@ -15,9 +14,7 @@
     "marvel:dev": "yarn workspace marvel dev",
     "lint": "yarn eslint ./packages"
   },
-  "dependencies": {
-    "node-fetch": "2.6.1"
-  },
+  "dependencies": {},
   "engines": {
     "npm": ">=8.5.5",
     "node": ">=16.15.0"

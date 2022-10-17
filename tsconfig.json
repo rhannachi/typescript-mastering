@@ -4,7 +4,10 @@
       "path": "./packages/httpClient"
     },
     {
-      "path": "./packages/marvel"
+      "path": "./packages/marvel-services"
+    },
+    {
+      "path": "./packages/marvel-client"
     }
   ],
   "files": [],

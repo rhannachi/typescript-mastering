@@ -1,18 +1,19 @@
 {
   "private": true,
-  "name": "http-client",
-  "version": "1.1.2",
+  "name": "marvel-client",
+  "version": "1.0.0",
   "author": "Ramzi <ramzi.hannachi1991@gmail.com>",
   "license": "MIT",
   "main": "build/index",
   "types": "build/index",
   "scripts": {
+    "dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register src/index.ts",
     "build": "tsc --build --force tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./build"
   },
   "dependencies": {
-    "node-fetch": "2.6.1"
+    "marvel-services": "1.0.11"
   },
   "devDependencies": {
-    "@types/node-fetch": "^2.6.2"
   }
+
 }

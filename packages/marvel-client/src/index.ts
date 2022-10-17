@@ -1,5 +1,4 @@
-import 'dotenv/config'
-import {fetchComics, fetchCreatorsByComicId} from "./services";
+import {fetchComics, fetchCreatorsByComicId, IComic} from "marvel-services";
 
 const main = async () => {
 
@@ -8,7 +7,7 @@ const main = async () => {
     if (comicsResponse.status === 'OK') {
         // TODO array of comic Ids
         const comics = comicsResponse.response.data.results.slice(0,3) // TODO remove slice
-        const comicIdsTODO = comics.map(async (comic) => {
+        const comicIdsTODO = comics.map(async (comic: IComic) => {
             const creatorsResponse = await fetchCreatorsByComicId(comic.id)
             if (creatorsResponse.status === "OK") {
                 return creatorsResponse.response.data.results

@@ -11,7 +11,7 @@
   },
   "references": [
     {
-      "path": "../httpClient"
+      "path": "../marvel-services"
     }
   ]
 }

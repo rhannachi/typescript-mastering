@@ -9,9 +9,9 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "tsc --build --force tsconfig.json",
-    "clean": "rm -rf packages/httpClient/build packages/marvel/build",
-    "marvel:dev": "yarn workspace marvel dev",
+    "build": "yarn workspace http-client build && yarn workspace marvel-client build && yarn workspace marvel-services build",
+    "clean": "rm -rf packages/**/build",
+    "marvel-client:dev": "yarn workspace marvel-client dev",
     "lint": "yarn eslint ./packages"
   },
   "dependencies": {},
@@ -28,6 +28,7 @@
     "eslint-config-prettier": "^8.5.0",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.1.0",
+    "tscpaths": "^0.0.9",
     "typescript": "^4.8.4"
   }
 }

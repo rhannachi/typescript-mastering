@@ -6,6 +6,9 @@
   "license": "MIT",
   "main": "build/index",
   "types": "build/index",
+  "scripts": {
+    "build": "tsc --build --force tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./build"
+  },
   "dependencies": {
     "node-fetch": "2.6.1"
   },

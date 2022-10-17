@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": [ "./.env", "./src"],
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "src",
+    "outDir": "build",
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    }
+  },
+  "references": [
+    {
+      "path": "../http-client"
+    }
+  ]
+}

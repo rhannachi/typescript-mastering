@@ -1,18 +1,19 @@
 {
   "private": true,
-  "name": "marvel",
-  "version": "1.0.0",
+  "name": "marvel-services",
+  "version": "1.0.11",
   "author": "Ramzi <ramzi.hannachi1991@gmail.com>",
   "license": "MIT",
   "main": "build/index",
   "types": "build/index",
   "scripts": {
-    "dev": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register ./src/server.ts"
+    "build": "tsc --build --force tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./build"
   },
   "dependencies": {
-    "http-client": "1.1.2",
-    "crypto-js": "^4.1.1"
+    "crypto-js": "^4.1.1",
+    "http-client": "1.1.2"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.1.1"
-  }}
+  }
+}

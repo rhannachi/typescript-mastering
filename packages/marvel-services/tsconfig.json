@@ -12,7 +12,7 @@
   },
   "references": [
     {
-      "path": "../httpClient"
+      "path": "../http-client"
     }
   ]
 }

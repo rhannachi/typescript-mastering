@@ -1,7 +1,7 @@
 {
   "references": [
     {
-      "path": "./packages/httpClient"
+      "path": "./packages/http-client"
     },
     {
       "path": "./packages/marvel-services"
